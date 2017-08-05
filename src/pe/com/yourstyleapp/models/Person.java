@@ -12,22 +12,24 @@ public class Person {
     private String firstName;
     private String lastName;
     private String dni;
+    private Date birthDate;
     private String email;
     private Status status;
     private Date registrationDate;
     private Date modificationDate;
     private int sendMail;
 
-    public Person(int id, String firstName, String lastName, String dni, String email, Status status, Date registrationDate, Date modificationDate, int sendMail) {
+    public Person(int id, String firstName, String lastName, String dni, Date birthDate, String email, Status status, Date registrationDate, Date modificationDate, int sendMail) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.dni = dni;
+        this.birthDate = birthDate;
         this.email = email;
         this.status = status;
         this.registrationDate = registrationDate;
-        this.modificationDate=modificationDate;
-        this.sendMail=sendMail;
+        this.modificationDate = modificationDate;
+        this.sendMail = sendMail;
     }
 
     public Person() {
@@ -63,6 +65,14 @@ public class Person {
 
     public void setDni(String dni) {
         this.dni = dni;
+    }
+
+    public Date getBirthDate() {
+        return birthDate;
+    }
+
+    public void setBirthDate(Date birthDate) {
+        this.birthDate = birthDate;
     }
 
     public String getEmail() {
@@ -111,6 +121,7 @@ public class Person {
                                 resultSet.getString("first_name"),
                                 resultSet.getString("last_name"),
                                 resultSet.getString("dni"),
+                                resultSet.getDate("birth_date"),
                                 resultSet.getString("email"),
                                 statusEntity.findById(resultSet.getInt("status_id")),
                                 resultSet.getDate("registration_date"),

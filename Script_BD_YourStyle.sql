@@ -19,6 +19,7 @@ create Table people(	id int not null primary key,
 						first_name varchar(150) not null,
 						last_name varchar(150) not null,
 						dni varchar(20) not null,
+						birth_date date not null,
 						email varchar(150) not null,
 						status_id int not null default 1,
 						registration_date datetime not null default getdate(),
@@ -66,16 +67,5 @@ go
 alter table people add constraint r1 foreign key (status_id) references Status(id)
 
 
-
-
-
-declare @id_tabla int
-exec sp_getIdTable	'people',@id_tabla output
-									
-select @id_tabla
-
-
-select *
-from tables
 
 
