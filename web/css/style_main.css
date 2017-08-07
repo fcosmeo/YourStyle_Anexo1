@@ -1,57 +1,72 @@
-#main{
-    background: url("../images/header-bg.jpg")
-    no-repeat fixed center;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+body{
+    background-color: white;
 }
 
-#user{
-    background-color: whitesmoke;
-}
-
-.cont{
-    background: rgba(0,0,0,.5);
+.form_gen{
+    margin: auto;
+    overflow: hidden;
     border-radius: 20px;
-    position: absolute;
-    top: 30%;
-    padding: 30px;
-    color: white;
-    right: 2%;
-    left: 2%;
-}
-.cont2{
-    background: rgba(0,0,0,.5);
-    border-radius: 20px;
-    top: 30%;
-    right: 20%;
-    left: 20%;
-    padding: 30px;
-    color: white;
-}
-#footer {
-    width: auto;
-    height: 200px;
-
-    margin-top:-200px;
-    -webkit-box-sizing:border-box;
-    -moz-box-sizing:border-box;
-    box-sizing:border-box;
-    background: #333;
-    border-top: 2px solid #000;
-
+    background-color:white;
+    border-color:darkgrey;
+    height: 484px;
+    width: 700px;
+    border-style: solid;
 }
 
-@media (min-width: 650px) {
-    .cont{
-        background: rgba(0,0,0,.5);
+.form_gen_left{
+    overflow: hidden;
+    float: left;
+    height: 478px;
+    width: 347px;
+    background-color: darkgreen;
+}
+
+.form_gen_right{
+    float: right;
+    height: 478px;
+    width: 330px;
+    text-align: center;
+}
+
+.form_gen_right_top{
+    background-color: white;
+    padding-top: 10px;
+    text-align: center;
+    height: 90px;
+    width: 300px;
+    overflow: hidden;
+}
+
+.form_gen_right_body{
+    background-color: gainsboro;
+    width: 315px;
+}
+
+@media (max-width: 700px) {
+    .form_gen{
+        margin: auto;
+        overflow: visible;
         border-radius: 20px;
-        position: absolute;
-        top: 30%;
-        right: 20%;
-        left: 20%;
-        padding: 30px;
-        color: white;
+        background-color:white;
+        border-color:darkgrey;
+        height: 484px;
+        width: 350px;
+        border-style: solid;
+    }
+    .form_gen_left{
+        overflow: hidden;
+        float: right;
+        height: 478px;
+        width: 0px;
+        background-color: darkgreen;
+        visibility: hidden;
+    }
+
+    .form_gen_right{
+        float: left;
+        height: 478px;
+        width: 330px;
+        text-align: center;
+        padding-left: 15px;
     }
 }

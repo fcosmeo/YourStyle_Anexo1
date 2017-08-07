@@ -2,6 +2,7 @@ package pe.com.yourstyleapp.models;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -61,11 +62,14 @@ public class PeopleEntity  extends BaseEntity{
         //return null;
     }
 
-    public Person create(String first_name, String last_name, String dni, Date birth_date, String email, int status_id, int send_mail) {
+    public Person create(String firstName, String lastName, String dni, Date birthDate, String email, String cellPhone, int statusId, int sendMail) {
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+        String birthDateText = dateFormat.format(birthDate);
         int id= getGeneralEntity().getIdTable(getTableName());
-        String sql = "Insert Into people(id, first_name, last_name, dni, birth_date, email, status_id, send_mail) " +
-                " Values(" + String.valueOf( id) + ", 'prueba', 'prueba2','15945678','01-01-2017','correo',1,1";
-        return updateByCriteria(sql) > 0 ? new Person(id, first_name, last_name,dni, birth_date,email, getStatusEntity().findById(status_id), getGeneralEntity().getCurrentDate(),null,send_mail) : null;
+
+        String sql = "Insert Into people(id, first_name, last_name, dni, birth_date, email, cell_phone, status_id, send_mail) " +
+                " Values("+String.valueOf(id)+", '"+firstName+"', '"+lastName+"','"+dni+"','"+birthDateText+"','"+email+"','"+cellPhone+"',"+String.valueOf(statusId)+","+String.valueOf(sendMail)+")";
+        return updateByCriteria(sql) > 0 ? new Person(id, firstName, lastName,dni, birthDate,email,cellPhone,getStatusEntity().findById(statusId), getGeneralEntity().getCurrentDate(),null,sendMail) : null;
     }
 
     public StatusEntity getStatusEntity() {

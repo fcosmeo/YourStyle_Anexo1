@@ -9,20 +9,20 @@
 <h:head>
    <link rel="stylesheet" href="css/style_main.css"/>
 </h:head>
-<h:body style="background-color: white;">
+<h:body>
    <div style="padding-top: 30px;">
-      <div style="margin: auto;overflow: hidden;border-radius: 20px;background-color:white;border-color:darkgrey;height: 484px;width: 700px;border-style: solid;">
-         <div style="overflow: hidden;float: left;height: 478px;width: 347px;background-color: darkgreen;">
+      <div class="form_gen" style="">
+         <div class="form_gen_left">
             <img src="images/image1.png" alt="Generic placeholder thumbnail"/>
          </div>
-         <div style="float: right;height: 478px;width: 330px;text-align: center;">
-            <div style="background-color: white;padding-top: 10px;text-align: center;height: 90px;width: 300px;overflow: hidden;">
+         <div class="form_gen_right">
+            <div class="form_gen_right_top">
                <img src="images/logo_main_1.png" alt="Generic placeholder thumbnail"/>
             </div>
-            <div style="background-color: gainsboro;width: 315px;">
+            <div class="form_gen_right_body">
                <h:form prependId="false">
                   <br/>
-                  <div align="center" style="height: 15px;">
+                  <div align="center" style="height: 8px;">
                      <b><h:outputLabel value="SUSCRIPCIÓN"/></b>
                   </div>
                   <br/>
@@ -47,7 +47,12 @@
                         <h:outputText value="@" />
                      </f:facet>
                   </b:inputText>
-                  <b:commandButton type="submit" value="Registrar" look="primary" style="width:100%" action="#{service.registerPerson}" />
+                  <b:inputText id="Celular" placeholder="Celular" value="#{service.person.cellPhone}" required="true">
+                     <f:facet name="prepend">
+                        <b:icon name="glyphicon glyphicon-phone" />
+                     </f:facet>
+                  </b:inputText>
+                  <b:commandButton type="submit" value="Registrar" look="primary" style="width:100%;background-color:black" action="#{service.registerPerson}" />
                </h:form>
             </div>
          </div>

@@ -21,6 +21,7 @@ create Table people(	id int not null primary key,
 						dni varchar(20) not null,
 						birth_date date not null,
 						email varchar(150) not null,
+						cell_phone varchar(15) null,
 						status_id int not null default 1,
 						registration_date datetime not null default getdate(),
 						modification_date datetime null,
@@ -65,6 +66,14 @@ End
 go
 
 alter table people add constraint r1 foreign key (status_id) references Status(id)
+go
+
+Insert Into status(id,description)
+values('0','Inactivo')
+Go
+Insert Into status(id,description)
+values('1','Activo')
+Go
 
 
 

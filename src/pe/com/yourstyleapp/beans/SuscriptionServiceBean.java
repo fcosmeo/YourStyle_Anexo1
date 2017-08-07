@@ -48,7 +48,8 @@ public class SuscriptionServiceBean {
         Person personaAuxiliary = new Person();
         personaAuxiliary=service.addPerson(person);
         if( personaAuxiliary.getId() > 0 ){
-            person=personaAuxiliary;
+            person=null;
+            person=new Person();
             this.message="";
             return "success";
         }else{

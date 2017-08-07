@@ -14,18 +14,20 @@ public class Person {
     private String dni;
     private Date birthDate;
     private String email;
+    private String cellPhone;
     private Status status;
     private Date registrationDate;
     private Date modificationDate;
     private int sendMail;
 
-    public Person(int id, String firstName, String lastName, String dni, Date birthDate, String email, Status status, Date registrationDate, Date modificationDate, int sendMail) {
+    public Person(int id, String firstName, String lastName, String dni, Date birthDate, String email, String cellPhone, Status status, Date registrationDate, Date modificationDate, int sendMail) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.dni = dni;
         this.birthDate = birthDate;
         this.email = email;
+        this.cellPhone=cellPhone;
         this.status = status;
         this.registrationDate = registrationDate;
         this.modificationDate = modificationDate;
@@ -83,6 +85,14 @@ public class Person {
         this.email = email;
     }
 
+    public String getCellPhone() {
+        return cellPhone;
+    }
+
+    public void setCellPhone(String cellPhone) {
+        this.cellPhone = cellPhone;
+    }
+
     public Status getStatus() {
         return status;
     }
@@ -123,6 +133,7 @@ public class Person {
                                 resultSet.getString("dni"),
                                 resultSet.getDate("birth_date"),
                                 resultSet.getString("email"),
+                                resultSet.getString("cell_phone"),
                                 statusEntity.findById(resultSet.getInt("status_id")),
                                 resultSet.getDate("registration_date"),
                                 resultSet.getDate("modification_date"),
