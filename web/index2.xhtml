@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:b="http://bootsfaces.net/ui">
+<h:head>
+    <link rel="stylesheet" href="css/style_main.css"/>
+</h:head>
+<h:body id="main">
+    <f:view>
+        <b:container layout="fluid">
+            <h:form id="Person" styleClass="cont" prependId="false">
+                <b:row>
+                    <b:column medium-screen="4"/>
+                    <b:column medium-screen="4">
+                        <br/>
+                        <div align="center"><b><h:outputLabel value="SUSCRIPCIÓN"/></b></div>
+                        <br/>
+                    </b:column>
+                </b:row>
+                <b:row>
+                    <b:column medium-screen="3"/>
+                    <b:column medium-screen="2">
+                        <b><h:outputText value="Nombres:"/></b>
+                    </b:column>
+                    <b:column medium-screen="4">
+                        <b:inputText id="Nombres" placeholder="nombres" value="#{service.person.firstName}" required="true" requiredMessage="El Nombre es requerido">
+                            <f:facet name="prepend">
+                                <b:icon name="glyphicon glyphicon-pencil" />
+                            </f:facet>
+                        </b:inputText>
+                    </b:column>
+                    <b:column medium-screen="2">
+                        <h:message for="Nombres" style="color:red"/>
+                    </b:column>
+                </b:row>
+                <b:row>
+                    <b:column medium-screen="3"/>
+                    <b:column medium-screen="2">
+                        <b><h:outputText value="Apellidos:"/></b>
+                    </b:column>
+                    <b:column medium-screen="4">
+                        <b:inputText id="Apellidos" placeholder="apellidos" value="#{service.person.lastName}" required="true" requiredMessage="Los apellidos son requeridos">
+                            <f:facet name="prepend">
+                                <b:icon name="glyphicon glyphicon-pencil" />
+                            </f:facet>
+                        </b:inputText>
+                    </b:column>
+                    <b:column medium-screen="2">
+                        <h:message for="Apellidos" style="color:red"/>
+                    </b:column>
+                </b:row>
+                <b:row>
+                    <b:column medium-screen="3"/>
+                    <b:column medium-screen="2">
+                        <b><h:outputText value="DNI:"/></b>
+                    </b:column>
+                    <b:column medium-screen="4">
+                        <b:inputText id="Dni" placeholder="dni" value="#{service.person.dni}" required="true" requiredMessage="El DNI es requerido">
+                            <f:facet name="prepend">
+                                <b:icon name="glyphicon glyphicon-pencil" />
+                            </f:facet>
+                        </b:inputText>
+                    </b:column>
+                    <b:column medium-screen="2">
+                        <h:message for="Dni" style="color:red"/>
+                    </b:column>
+                </b:row>
+                <b:row>
+                    <b:column medium-screen="3"/>
+                    <b:column medium-screen="2">
+                        <b><h:outputText value="Fecha de Nacimiento:"/></b>
+                    </b:column>
+                    <b:column medium-screen="4">
+                        <b:datepicker id="FechaNacimiento" changeYear="true" changeMonth="true" format="MM/DD/YYYY" mode="toggle-icon" showWeek="true" firstDay="1" value="#{service.person.birthDate}"  required="true" requiredMessage="La fecha de nacimiento es requerido"/>
+                    </b:column>
+                    <b:column medium-screen="2">
+                        <h:message for="FechaNacimiento" style="color:red"/>
+                    </b:column>
+                </b:row>
+                <b:row>
+                    <b:column medium-screen="3"/>
+                    <b:column medium-screen="2">
+                        <b><h:outputText value="Correo:"/></b>
+                    </b:column>
+                    <b:column medium-screen="4">
+                        <b:inputText id="Correo" placeholder="correo" value="#{service.person.email}" required="true" requiredMessage="El correo es requerido">
+                            <f:facet name="prepend">
+                                <h:outputText value="@" />
+                            </f:facet>
+                        </b:inputText>
+                    </b:column>
+                    <b:column medium-screen="2">
+                        <h:message for="Correo" style="color:red"/>
+                    </b:column>
+                </b:row>
+                <b:row>
+                    <b:column medium-screen="4"></b:column>
+                    <b:column medium-screen="2">
+                        <h:outputLabel value="#{service.message}"/>
+                    </b:column>
+                    <b:column medium-screen="2">
+                        <b:commandButton type="submit" value="Registrar" look="primary" style="width:100%" action="#{service.registerPerson}" />
+                    </b:column>
+                </b:row>
+            </h:form>
+        </b:container>
+    </f:view>
+</h:body>
+</html>

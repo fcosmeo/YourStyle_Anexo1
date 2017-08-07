@@ -29,7 +29,7 @@ public class SuscriptionServiceBean {
         try {
             InitialContext ctx = new InitialContext();
             Connection connection = ((DataSource) ctx
-                    .lookup("jdbc/MySQLDataSource_LanguageXS"))
+                    .lookup("jdbc/SqlServerDataSource_YourStyle"))
                     .getConnection();
             service = new YourstyleService();
             service.setConnection(connection);
@@ -59,10 +59,6 @@ public class SuscriptionServiceBean {
 
     /*Menu*/
     public String homeDefault() {
-        return "success";
-    }
-
-    public String addLanguage() {
         return "success";
     }
 

@@ -76,6 +76,6 @@ public class YourstyleService {
     }
 
     public Person addPerson(Person person){
-        return getPeopleEntity().create(person.getFirstName(),person.getLastName(),person.getDni(),person.getEmail(),1,person.getSendMail());
+        return getPeopleEntity().create("prueba1","prueba2",person.getDni(),person.getBirthDate(),person.getEmail(),1,1);
     }
 }

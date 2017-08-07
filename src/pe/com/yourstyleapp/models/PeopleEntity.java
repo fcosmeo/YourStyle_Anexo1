@@ -63,9 +63,8 @@ public class PeopleEntity  extends BaseEntity{
 
     public Person create(String first_name, String last_name, String dni, Date birth_date, String email, int status_id, int send_mail) {
         int id= getGeneralEntity().getIdTable(getTableName());
-        String sql = "Insert Into people(id, first_name, last_name, dni, birth_date, email, status_id, registration_date, send_mail) " +
-                " Values(" + String.valueOf( id) + ", '" + first_name + "', '"+ last_name + "','"+ dni +"','"+String.valueOf(birth_date)+"','"+ email   +"',"+String.valueOf( status_id )+
-                ",'"+String.valueOf(getGeneralEntity().getCurrentDate())+"',"+String.valueOf( send_mail )+")";
+        String sql = "Insert Into people(id, first_name, last_name, dni, birth_date, email, status_id, send_mail) " +
+                " Values(" + String.valueOf( id) + ", 'prueba', 'prueba2','15945678','01-01-2017','correo',1,1";
         return updateByCriteria(sql) > 0 ? new Person(id, first_name, last_name,dni, birth_date,email, getStatusEntity().findById(status_id), getGeneralEntity().getCurrentDate(),null,send_mail) : null;
     }
 

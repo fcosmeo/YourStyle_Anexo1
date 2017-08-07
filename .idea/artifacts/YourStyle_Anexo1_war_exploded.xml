@@ -10,6 +10,7 @@
         <element id="directory" name="lib">
           <element id="library" level="project" name="Mojarra-2.2.1" />
           <element id="library" level="project" name="PrimeFaces-5.2" />
+          <element id="library" level="project" name="BootsFaces-OSP-1.0.2-dist-default" />
         </element>
       </element>
     </root>
