@@ -7,6 +7,17 @@
       xmlns:f="http://xmlns.jcp.org/jsf/core"
       xmlns:b="http://bootsfaces.net/ui">
 <h:head>
+   <title>You Style QBO</title>
+
+   <!-- Imagen del logo del titulo -->
+   <link type="image/x-icon" href="images/logo_title_1.png" rel="icon" />
+
+   <meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+   <meta http-equiv="pragma" content="no-cache"/>
+
+   <!-- Para que no se pueda hacer zoom en los dispositivos moviles -->
+   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+
    <link rel="stylesheet" href="css/style_main.css"/>
 </h:head>
 <h:body>
@@ -21,24 +32,24 @@
             </div>
             <div class="form_gen_right_body">
                <h:form prependId="false">
-                  <br/>
-                  <div align="center" style="height: 8px;">
+
+                  <div align="center" style="height: 12px;padding-top: 8px;">
                      <b><h:outputLabel value="SUSCRIPCIÓN"/></b>
                   </div>
                   <br/>
-                  <b:inputText id="Nombres" placeholder="Nombres" value="#{service.person.firstName}" style="width:276px !important;" required="true" requiredMessage="El Nombre es requerido">
+                  <b:inputText id="Nombres" placeholder="Nombres" value="#{service.person.firstName}"  required="true" requiredMessage="El Nombre es requerido">
                      <f:facet name="prepend">
                         <b:icon name="glyphicon glyphicon-pencil" />
                      </f:facet>
                   </b:inputText>
-                  <b:inputText id="Apellidos" placeholder="Apellidos" value="#{service.person.lastName}" style="width:276px !important;" required="true" requiredMessage="Los apellidos son requeridos">
+                  <b:inputText id="Apellidos" placeholder="Apellidos" value="#{service.person.lastName}" required="true" requiredMessage="Los apellidos son requeridos">
                      <f:facet name="prepend">
                         <b:icon name="glyphicon glyphicon-pencil" />
                      </f:facet>
                   </b:inputText>
                   <b:inputText id="Dni" placeholder="Dni" value="#{service.person.dni}" required="true" requiredMessage="El DNI es requerido">
                      <f:facet name="prepend">
-                        <b:icon name="glyphicon glyphicon-pencil" />
+                        <b:icon name="glyphicon glyphicon-credit-card" />
                      </f:facet>
                   </b:inputText>
                   <b:datepicker id="FechaNacimiento" placeholder="Fecha de Nacimiento" changeYear="true" changeMonth="true" format="MM/DD/YYYY" mode="toggle-icon" showWeek="true" firstDay="1" value="#{service.person.birthDate}"  required="true" requiredMessage="La fecha de nacimiento es requerido"/>
@@ -55,6 +66,7 @@
                   <b:commandButton type="submit" value="Registrar" look="primary" style="width:100%;background-color:black" action="#{service.registerPerson}" />
                </h:form>
             </div>
+            <h:outputLabel value="#{service.message}"/>
          </div>
       </div>
    </div>

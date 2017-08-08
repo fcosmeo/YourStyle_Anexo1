@@ -50,7 +50,7 @@ public class SuscriptionServiceBean {
         if( personaAuxiliary.getId() > 0 ){
             person=null;
             person=new Person();
-            this.message="";
+            this.message="Registro correcto.";
             return "success";
         }else{
             this.message="Incorrect data";
