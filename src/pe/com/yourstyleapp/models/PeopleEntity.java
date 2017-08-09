@@ -48,14 +48,14 @@ public class PeopleEntity  extends BaseEntity{
     }
 
     public Person findById(int id) {
-        String statement = "Select id,first_name,last_name,dni,email,status_id,registration_date,modification_date,send_mail From People " +
+        String statement = "Select id, first_name, last_name, dni, birth_date, email, cell_phone, status_id, registration_date, modification_date, send_mail From People " +
                 " Where id = " +String.valueOf(id);
         List<Person> people = findByCriteria(statement);
         return people != null ? people.get(0) : null;
     }
 
     public Person findByEmail(String email) {
-        String statement = "Select id,first_name,last_name,dni,email,status_id,registration_date,modification_date,send_mail From people " +
+        String statement = "Select id, first_name, last_name, dni, birth_date, email, cell_phone, status_id, registration_date, modification_date, send_mail From people " +
                 " Where email = '" +String.valueOf(email)+"'";
         List<Person> people = findByCriteria(statement);
         return people.size()>0 ? people.get(0) : null;

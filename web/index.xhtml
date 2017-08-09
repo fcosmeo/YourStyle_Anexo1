@@ -37,28 +37,28 @@
                      <b><h:outputLabel value="SUSCRIPCIÓN"/></b>
                   </div>
                   <br/>
-                  <b:inputText id="Nombres" placeholder="Nombres" value="#{service.person.firstName}"  required="true" requiredMessage="El Nombre es requerido">
+                  <b:inputText id="Nombres" placeholder="Nombres" value="#{service.person.firstName}">
                      <f:facet name="prepend">
                         <b:icon name="glyphicon glyphicon-pencil" />
                      </f:facet>
                   </b:inputText>
-                  <b:inputText id="Apellidos" placeholder="Apellidos" value="#{service.person.lastName}" required="true" requiredMessage="Los apellidos son requeridos">
+                  <b:inputText id="Apellidos" placeholder="Apellidos" value="#{service.person.lastName}">
                      <f:facet name="prepend">
                         <b:icon name="glyphicon glyphicon-pencil" />
                      </f:facet>
                   </b:inputText>
-                  <b:inputText id="Dni" placeholder="Dni" value="#{service.person.dni}" required="true" requiredMessage="El DNI es requerido">
+                  <b:inputText id="Dni" placeholder="Dni" value="#{service.person.dni}">
                      <f:facet name="prepend">
                         <b:icon name="glyphicon glyphicon-credit-card" />
                      </f:facet>
                   </b:inputText>
-                  <b:datepicker id="FechaNacimiento" placeholder="Fecha de Nacimiento" changeYear="true" changeMonth="true" format="MM/DD/YYYY" mode="toggle-icon" showWeek="true" firstDay="1" value="#{service.person.birthDate}"  required="true" requiredMessage="La fecha de nacimiento es requerido"/>
-                  <b:inputText id="Correo" placeholder="Correo" value="#{service.person.email}" required="true" requiredMessage="El correo es requerido">
+                  <b:datepicker id="FechaNacimiento" placeholder="Fecha de Nacimiento" changeYear="true" changeMonth="true" format="MM/DD/YYYY" mode="toggle-icon" showWeek="true" firstDay="1" value="#{service.person.birthDate}"/>
+                  <b:inputText id="Correo" placeholder="Correo" value="#{service.person.email}">
                      <f:facet name="prepend">
                         <h:outputText value="@" />
                      </f:facet>
                   </b:inputText>
-                  <b:inputText id="Celular" placeholder="Celular" value="#{service.person.cellPhone}" required="true">
+                  <b:inputText id="Celular" placeholder="Celular" value="#{service.person.cellPhone}">
                      <f:facet name="prepend">
                         <b:icon name="glyphicon glyphicon-phone" />
                      </f:facet>

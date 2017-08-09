@@ -46,6 +46,35 @@ public class SuscriptionServiceBean {
 
     public String registerPerson(){
         Person personaAuxiliary = new Person();
+        Person personaAuxiliary1 = new Person();
+        if(person.getFirstName()==null || person.getFirstName().equals("")) {
+            this.message = "El Nombre es requerido.";
+            return "error";
+        }
+        if(person.getLastName()==null || person.getLastName().equals("")) {
+            this.message = "El apellido es requerido.";
+            return "error";
+        }
+        if(person.getDni()==null || person.getDni().equals("")) {
+            this.message = "El número de DNI es requerido.";
+            return "error";
+        }
+        if(person.getBirthDate()==null || String.valueOf(person.getBirthDate()).equals("")) {
+            this.message = "La fecha de nacimiento es requerido.";
+            return "error";
+        }
+        if(person.getEmail()==null || person.getEmail().equals("")) {
+            this.message = "El correo es requerido.";
+            return "error";
+        }
+
+        personaAuxiliary1=service.findPersonByEmail(person.getEmail());
+
+        if(personaAuxiliary1 != null){
+            this.message="El correo ya se encuentra registrado";
+            return "error";
+        }
+
         personaAuxiliary=service.addPerson(person);
         if( personaAuxiliary.getId() > 0 ){
             person=null;
@@ -56,6 +85,7 @@ public class SuscriptionServiceBean {
             this.message="Incorrect data";
             return "error";
         }
+
     }
 
     /*Menu*/
